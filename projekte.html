@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="/index.html">
+            <div class="button">
+                <span id="arrow-back" class="material-symbols-outlined">
+                    arrow_back
+                </span>
+            </div>
+        </a>
+        <div class="button" onclick="toggleDarkMode()">
+            <span id="modeIcon" class="material-symbols-outlined">
+            dark_mode
+            </span>
+        </div>
+    </header>
+    <div class="kachel">
+        <h1>Projekte</h1>
+        <div class="projekt-grid">
+            <div class="project">
+                <div class="responsive-box">
+                    <div class="project-slide">
+                        <img src="assets/img/image-omelette.jpeg" alt="">
+                    </div>
+                </div>
+                <div class="project-text">
+                    <h2>Webseite: <br> Einfaches Omlette Rezept</h2>
+                    <div class="fliesstext">Single-Page gestaltet und designt mit HTML und CSS.
+                        <br> Die Webseite ist für die Ansicht auf mobilen Geräten geeignet mit einem Breakpoint bei 768px. 
+                    </div>
+                    <div class="stuff-button" id="recipe">
+                        HTML
+                    </div>
+                    <div class="stuff-button" id="recipe">
+                        CSS
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="responsive-box">
+                    <div class="project-slide" id="owlround">
+                        <img src="assets/img/owlround.png" alt="">
+                    </div>
+                </div>
+                <div class="project-text">
+                    <h2>Webanwendung: <br>Owlround</h2>
+                    <div class="fliesstext"> Eine Webanwendung für agiles Arbeiten.
+                        <br> Im Rahmen unserer Projektarbeit im Studium haben wir eine FullStack-Applikation konzpiert und entwickelt.
+                        Die App ist ein Projektmanagementtool mit nützlichen Hilfsmitteln wie einem Kanbanboard, Burndownchart.
+                        Hier war ich unter anderem zuständig für die Gestaltung der Nutzeroberflächen unter anderem mit Figma und die Front-End Entwicklung.
+                    </div>
+                    <div class="stuff-button" id="owlround">
+                        HTML
+                    </div>
+                    <div class="stuff-button" id="owlround">
+                        CSS
+                    </div>
+                    <div class="stuff-button" id="owlround">
+                        JavaScript
+                    </div>
+                    <div class="stuff-button" id="owlround">
+                        SQL
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="https://github.com/Ralph1612">
+            <div class="contact-button">
+                Github
+            </div>
+        </a>
+
+
+    </div>
+
+    <script>
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+            document.getElementById('modeIcon').textContent = 'light_mode';
+        }
+
+        function toggleDarkMode() {
+            var body = document.body;
+            body.classList.toggle("dark-mode");
+
+            localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
+            
+            var modeIcon = document.getElementById('modeIcon');
+            modeIcon.textContent = body.classList.contains('dark-mode') ? 'light_mode' : 'dark_mode';
+        }
+
+    </script>
+    
+</body>
+</html>

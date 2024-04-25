@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="/index.html">
+            <div class="button">
+                <span id="arrow-back" class="material-symbols-outlined">
+                    arrow_back
+                </span>
+            </div>
+        </a>
+        <div class="button" onclick="toggleDarkMode()">
+            <span id="modeIcon" class="material-symbols-outlined">
+            dark_mode
+            </span>
+        </div>
+    </header>
+    <div class="kachel">
+        <h2>Ralph Dirauf</h2>
+        <div class="contact-box">
+            <div class="contact-together">
+                <div class="contact-icon">
+                    <span id="modeIcon" class="material-symbols-outlined">
+                        phone_iphone
+                    </span>
+                </div>
+                <div class="contact text">0176 / 34752426</div>
+            </div>
+            <div class="contact-together">
+                <div class="contact-icon">
+                    <span id="modeIcon" class="material-symbols-outlined">
+                        mail
+                    </span>
+                </div>
+                <div class="contact text">ralphdirauf@aol.de</div>
+            </div>
+            <div class="contact-together">
+                <div class="contact-icon">
+                    <span id="modeIcon" class="material-symbols-outlined">
+                        home
+                    </span>
+                </div>
+                <div class="contact text">Coburger Straße 6 <br> 91056 Erlangen</div>
+            </div>
+        </div>
+
+        <div class="buttons-contact">
+            <a href="https://github.com/Ralph1612">
+                <div class="contact-button">
+                    Github
+                </div>
+            </a>
+            <a href="https://www.linkedin.com/in/ralph-dirauf/">
+                <div class="contact-button">
+                    LinkedIn
+                </div>
+            </a>
+
+    </div>
+
+    <script>
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+            document.getElementById('modeIcon').textContent = 'light_mode';
+        }
+
+        function toggleDarkMode() {
+            var body = document.body;
+            body.classList.toggle("dark-mode");
+
+            localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
+            
+            var modeIcon = document.getElementById('modeIcon');
+            modeIcon.textContent = body.classList.contains('dark-mode') ? 'light_mode' : 'dark_mode';
+        }
+
+    </script>
+    
+</body>
+</html>

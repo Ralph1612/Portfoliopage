@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header>
+        <h1>Ralphs Webseite</h1>
+        <div class="button" onclick="toggleDarkMode()">
+            <span id="modeIcon" class="material-symbols-outlined">
+            dark_mode
+            </span>
+        </div>
+    </header>
+
+    <div class="index">
+        <a href="/projekte.html">
+            <h1>Bisherige Projekte</h1>
+        </a>
+        <a href="/Profil.html">
+            <h1>Über mich</h1>
+        </a>
+        <a href="/kontakt.html">
+            <h1>Kontakt</h1>
+        </a>
+    </div>
+
+    <script>
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+            document.getElementById('modeIcon').textContent = 'light_mode';
+        }
+
+        function toggleDarkMode() {
+            var body = document.body;
+            body.classList.toggle("dark-mode");
+
+            localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
+            
+            var modeIcon = document.getElementById('modeIcon');
+            modeIcon.textContent = body.classList.contains('dark-mode') ? 'light_mode' : 'dark_mode';
+        }
+    </script>
+
+    
+</body>
+</html>

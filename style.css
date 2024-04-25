@@ -1,0 +1,380 @@
+:root{
+    /*Light mode*/
+    --button-color-light: lightgrey;
+    --shadow-light: rgba(114, 109, 109, 0.2);
+    --shadow-hover-light: rgba(114, 109, 109, 0.5);
+
+    /*Dark mode*/
+    --button-color-dark: rgb(70, 61, 61);
+    --shadow-dark: rgba(243, 234, 194, 0.3);
+    --shadow-hover-dark: rgba(243, 234, 194, 0.5);
+
+    /*Standard-Farben*/
+    --button-color: var(--button-color-light);
+    --shadow: var(--shadow-light);
+    --shadow-hover: var(--shadow-hover-light);
+
+
+}
+
+.dark-mode {
+    --button-color: var(--button-color-dark);
+    --shadow: var(--shadow-dark);
+    --shadow-hover: var(--shadow-hover-dark);
+    background-color: rgb(3, 7, 19);
+    color: white;
+    transition: 5ms;
+  }
+
+
+.jost-bold {
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+
+*{
+    font-family: 'Jost';
+    font-weight: 700;
+    font-style: normal;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+}
+
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+.index{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 90vh;
+    font-size: calc(16px + .08*(75vw - 290px));
+    margin-block-end: auto;
+}
+
+.index h1{
+    margin-block-start: -0.1em;
+    margin-block-end: -0.1em;  
+}
+
+.index h1:hover{
+    color: dodgerblue;
+    opacity: 1;
+    transition: ease-in 0.5s;
+
+}
+
+.material-symbols-outlined {
+    user-select: none;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.button {
+    width: fit-content;
+    height: fit-content;
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; 
+}
+
+.button:hover{
+    color: dodgerblue;
+    text-shadow: 2px 3px 5px 2px var(--shadow);
+}
+
+  .marquee {
+    position: relative;
+    overflow: hidden;
+    --offset: 20vw;
+    --move-initial: calc(-25% + var(--offset));
+    --move-final: calc(-50% + var(--offset));
+}
+
+.marquee__inner {
+    width: fit-content;
+    display: flex;
+    position: relative;
+    transform: translate3d(var(--move-initial), 0, 0);
+    animation: marquee 5s linear infinite;
+    animation-play-state: paused;
+}
+
+.marquee span {
+    font-size: 10vw;
+    padding: 0 2vw;
+}
+
+.marquee:hover .marquee__inner {
+    animation-play-state:running;
+    color: lightskyblue;
+    cursor: pointer;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate3d(var(--move-initial), 0, 0);
+    }
+
+    100% {
+        transform: translate3d(var(--move-final), 0, 0);
+    }
+}
+
+/*Kontakt*/
+.kachel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    margin: 0 15px;
+
+}
+
+.contact-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    padding: 20px;
+    border-radius: 15px;
+    width: 320px;
+}
+
+.contact-together{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.contact-icon{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    color: dodgerblue;
+}
+
+.contact text{
+    width: max-content;
+
+}
+
+.contact-button{
+    border: solid  dodgerblue 1px;
+    width: 100px;
+    text-align: center;
+    padding: 5px;
+    margin: 25px;
+    transition: all .3s;
+    border-radius: 15px;
+}
+
+.contact-button:hover{
+    background-color: dodgerblue;
+    color: white;
+
+}
+
+.buttons-contact{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+/*Profil*/
+.grid-skill-text{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    max-width: 800px;
+    gap: 5rem;
+}
+
+@media (min-width: 360px){
+    .grid-skill-text>* {
+        flex: 1 0 300px;
+    }
+}
+
+.skill{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: flex-start;
+    justify-content: stretch;
+    margin-bottom: 1.5rem;
+}
+
+.skill-rating .material-symbols-outlined{
+    font-size: smaller;
+
+}
+
+span.skill-sub{
+    font-size: smaller;
+}
+
+.image{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.fliesstext, .fliesstext li, .fliesstext p{
+    font-weight: 500;
+    font-style: normal;
+}
+
+.job h5{
+    margin-block-start: 0.2rem;
+    margin-block-end: 0.2rem;
+}
+
+.slider-container{
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 95vw;
+    height: max-content;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch; 
+}
+
+.slider-container::-webkit-scrollbar {
+    display: none; 
+}
+
+.erfahrung-slider, .ausbildung-slider{
+    width: 90vw;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.erfahrung{
+    width: 95vw;
+}
+.job {
+    flex: 0 0 auto; 
+    width: 75vw;
+    padding: 20px;
+    margin-right: 10px;
+    border-radius: 25px;
+    white-space: normal; 
+}
+
+.arrows{
+    position: absolute;
+    top: 0;
+
+}
+
+.left-arrow-erfahrung, .right-arrow-erfahrung, .left-arrow-ausbildung, .right-arrow-ausbildung{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 5px;
+    background-color: var(--button-color);
+    border-radius: 50%;
+}
+
+.erfahrung h2{
+    margin-left: 5vw;
+    margin-block-start: 4em;
+    margin-block-end: 0.0em;
+}
+
+/*Project*/
+.projekt-grid{
+    width: 100%;
+}
+
+.project{
+    display: grid;
+    grid-template-columns: 0.7fr 0.3fr;
+    
+}
+
+.responsive-box {
+    width: 100%;
+    position: relative;
+    padding-bottom: 70%;
+  }
+
+.project-slide{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(30, 54%, 90%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#owlround{
+    background-color: teal;
+    border: none;
+    color: rgb(187, 235, 232);
+}
+
+#recipe{
+    background-color: hsl(30, 54%, 90%);
+    color: hsl(332, 51%, 32%);
+    border: none;
+
+}
+
+.project-slide img{
+    width: 60%;
+    height: 60%;
+    object-fit: cover;
+}
+
+
+.project-slide:hover{
+    filter: contrast(115%);
+    transition: ease-in-out 0.8s;
+}
+
+.project-text{
+    padding-left: 1rem;
+    width: 100%;
+}
+
+.stuff-button{
+    border: solid  dodgerblue 1px;
+    width: 100px;
+    text-align: center;
+    padding: 5px;
+    margin: 25px;
+    transition: all .3s;
+    border-radius: 15px;
+}
