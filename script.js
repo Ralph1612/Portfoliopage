@@ -32,20 +32,20 @@ window.addEventListener('scroll', function() {
         var nextPage;
 
         switch(currentPage) {
-            case './index.html':
-                nextPage = './projekte.html';
+            case '/index.html':
+                nextPage = '/Portfoliopage/projekte.html';
                 break;
-            case './projekte.html':
-                nextPage = './profil.html';
+            case '/Portfoliopage/projekte.html':
+                nextPage = '/Portfoliopage/profil.html';
                 break;
-            case './profil.html':
-                nextPage = './kontakt.html';
+            case '/Portfoliopage/profil.html':
+                nextPage = '/Portfoliopage/kontakt.html';
                 break;
-            case './kontakt.html':
-                nextPage = './index.html';
+            case '/Portfoliopage/kontakt.html':
+                nextPage = '/Portfoliopage/index.html';
                 break;
             default:
-                nextPage = './index.html';
+                nextPage = '/Portfoliopage/index.html';
         }
 
         setTimeout(function() {
