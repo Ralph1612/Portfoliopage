@@ -145,10 +145,6 @@ a:link, a:visited, a:hover, a:active {
     color: inherit;
 }
 
-a{
-    target-new: tab;
-}
-
 .loader {
     width: 30px;
     aspect-ratio: 1;
