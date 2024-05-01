@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontakt</title>
+    <script src="./script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -12,13 +13,17 @@
 </head>
 <body>
     <header>
-        <a href="/index.html">
+        <a href="./index.html">
             <div class="button">
                 <span id="arrow-back" class="material-symbols-outlined">
                     arrow_back
                 </span>
             </div>
         </a>
+        <div class="combined">
+            <div class="loader"></div>
+            <h1>Kontakt</h1>
+        </div>
         <div class="button" onclick="toggleDarkMode()">
             <span id="modeIcon" class="material-symbols-outlined">
             dark_mode
@@ -26,7 +31,7 @@
         </div>
     </header>
     <div class="kachel">
-        <h2>Ralph Dirauf</h2>
+        <h2 id="contact-name">Ralph Dirauf</h2>
         <div class="contact-box">
             <div class="contact-together">
                 <div class="contact-icon">
@@ -67,24 +72,7 @@
             </a>
 
     </div>
+    <div class="loader" id="loader-end-kontakt"></div>
 
-    <script>
-        if (localStorage.getItem('darkMode') === 'true') {
-            document.body.classList.add('dark-mode');
-            document.getElementById('modeIcon').textContent = 'light_mode';
-        }
-
-        function toggleDarkMode() {
-            var body = document.body;
-            body.classList.toggle("dark-mode");
-
-            localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
-            
-            var modeIcon = document.getElementById('modeIcon');
-            modeIcon.textContent = body.classList.contains('dark-mode') ? 'light_mode' : 'dark_mode';
-        }
-
-    </script>
-    
 </body>
 </html>

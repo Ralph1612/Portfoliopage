@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontakt</title>
+    <script src="./script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -12,13 +13,17 @@
 </head>
 <body>
     <header>
-        <a href="/index.html">
+        <a href="./index.html">
             <div class="button">
                 <span id="arrow-back" class="material-symbols-outlined">
                     arrow_back
                 </span>
             </div>
         </a>
+        <div class="combined">
+            <div class="loader"></div>
+            <h1>Profil</h1>
+        </div>
         <div class="button" onclick="toggleDarkMode()">
             <span id="modeIcon" class="material-symbols-outlined">
             dark_mode
@@ -151,17 +156,9 @@
         </div>
 
         <div class="erfahrung">
-            <h2><span class="material-symbols-outlined">
-                business_center
-                </span>
-                &nbsp Erfahrung</h2>
+            <h2>Erfahrung</h2>
             
             <section class="slider-container">
-                <div class="left-arrow-erfahrung">
-                    <span class="material-symbols-outlined">
-                        chevron_left
-                    </span>
-                </div>
                 <section class="erfahrung-slider">
                     <div class="job">
                         <h4>Werkstudent bei inFranken.de / März 2022 –  März 2024</h4>
@@ -196,33 +193,13 @@
                         </div>
                     </div>
                 </section>
-                <div class="right-arrow-erfahrung">
-                    <span class="material-symbols-outlined">
-                        <span class="material-symbols-outlined">
-                            chevron_right
-                            </span>
-                    </span>
-                </div>
             </secction>
-            
         </div>
 
         <div class="erfahrung">
-            <h2> 
-                <span class="material-symbols-outlined">
-                school
-                </span>
-                &nbsp Ausbildung
-                </h2>
+            <h2> Ausbildung</h2>
             
             <section class="slider-container">
-                <div class="left-arrow-ausbildung">
-                    <span class="material-symbols-outlined">
-                        <span class="material-symbols-outlined">
-                            chevron_left
-                            </span>
-                    </span>
-                </div>
                 <section class="ausbildung-slider">
                     <div class="job">
                         <h4>Studium Wirtschaftsinformatik, Universität Bamberg / Okt. 2020 –  März 2024</h4>
@@ -249,13 +226,6 @@
                         <h5>Abschluss: Abitur 2015</h5>
                     </div>
                 </section>
-                <div class="right-arrow-ausbildung">
-                    <span class="material-symbols-outlined">
-                        <span class="material-symbols-outlined">
-                            chevron_right
-                            </span>
-                    </span>
-                </div>
             </secction>
             
         </div>
@@ -266,106 +236,8 @@
                 LinkedIn
             </div>
         </a>
+        <div class="loader" id="loader-end"></div>
     </div>
-
-    <script>
-
-        if (localStorage.getItem('darkMode') === 'true') {
-            document.body.classList.add('dark-mode');
-            document.getElementById('modeIcon').textContent = 'light_mode';
-        }
-
-        function toggleDarkMode() {
-            var body = document.body;
-            body.classList.toggle("dark-mode");
-
-            localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
-            
-            var modeIcon = document.getElementById('modeIcon');
-            modeIcon.textContent = body.classList.contains('dark-mode') ? 'light_mode' : 'dark_mode';
-        }
-
-        const hSections = document.querySelectorAll('.erfahrung-slider');
-
-        //attach wheel event listener to each hSection
-        hSections.forEach((hSection) => {
-
-            const jobWidth = hSection.querySelector('.job').clientWidth;
-            // getting the width of the section
-            // we will scroll this amount on mouse scroll
-            const scrollAmount = hSection.clientWidth;
-            hSection.addEventListener('wheel', function (e) {
-                // we need to stop vertical page scroll when
-                // scrolling on the horizontal section
-                e.preventDefault();
-
-                // if the mouse wheel is scrolling upward, we will scroll
-                //  to the left
-                if (e.deltaY > 0) hSection.scrollLeft += jobWidth;
-                // otherwise to the right
-                else hSection.scrollLeft -= scrollAmount;
-            });
-        });
-
-        const rightArrowErfahrung = document.querySelector('.right-arrow-erfahrung')
-        const leftArrowErfahrung =document.querySelector('.left-arrow-erfahrung')
-
-
-        rightArrowErfahrung.addEventListener('click', () => {
-            hSections.forEach((hSection) => {
-                const jobWidth = hSection.querySelector('.job').clientWidth;
-                hSection.scrollLeft += jobWidth ;
-            });
-        });
-        
-        leftArrowErfahrung.addEventListener('click', () => {
-            hSections.forEach((hSection) => {
-                const jobWidth = hSection.querySelector('.job').clientWidth;
-                hSection.scrollLeft -=jobWidth;
-            });
-        });
-
-        const hSectionsAusbildung = document.querySelectorAll('.ausbildung-slider');
-
-        //attach wheel event listener to each hSection
-        hSectionsAusbildung.forEach((hSection) => {
-            // getting the width of the section
-            // we will scroll this amount on mouse scroll
-            const scrollAmount = hSection.clientWidth;
-            hSection.addEventListener('wheel', function (e) {
-                // we need to stop vertical page scroll when
-                // scrolling on the horizontal section
-                e.preventDefault();
-
-                // if the mouse wheel is scrolling upward, we will scroll
-                //  to the left
-                if (e.deltaY > 0) hSection.scrollLeft += scrollAmount;
-                // otherwise to the right
-                else hSection.scrollLeft -= scrollAmount;
-            });
-        });
-
-
-        const rightArrowAusbildung = document.querySelector('.right-arrow-ausbildung')
-        const leftArrowAusbildung =document.querySelector('.left-arrow-ausbildung')
-
-
-        rightArrowAusbildung.addEventListener('click', () => {
-            hSectionsAusbildung.forEach((hSection) => {
-                const jobWidth = hSection.querySelector('.job').clientWidth;
-                hSection.scrollLeft += jobWidth;
-            });
-        });
-        
-        leftArrowAusbildung.addEventListener('click', () => {
-            hSectionsAusbildung.forEach((hSection) => {
-                const jobWidth = hSection.querySelector('.job').clientWidth;
-                hSection.scrollLeft -= jobWidth;
-            });
-        });
-
-
-    </script>
-    
+  
 </body>
 </html>

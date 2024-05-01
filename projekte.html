@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt</title>
+    <title>Projekte</title>
+    <script src="./script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -19,6 +20,10 @@
                 </span>
             </div>
         </a>
+        <div class="combined">
+            <div class="loader"></div>
+            <h1>Projekte</h1>
+        </div>
         <div class="button" onclick="toggleDarkMode()">
             <span id="modeIcon" class="material-symbols-outlined">
             dark_mode
@@ -26,84 +31,92 @@
         </div>
     </header>
     <div class="kachel">
-        <h1>Projekte</h1>
         <div class="projekt-grid">
             <div class="project">
                 <div class="responsive-box">
                     <div class="project-slide" id="recipe">
-                        <img src="assets/img/image-omelette.jpeg" alt="">
+                        <h1>Webseite <br> Einfaches Omlette Rezept</h2>
                     </div>
                 </div>
                 <div class="project-text">
-                    <h2>Webseite: <br> Einfaches Omlette Rezept</h2>
+                    <h3>Für den kleinen Hunger zwischendurch</h3>
                     <div class="fliesstext">Single-Page gestaltet und designt mit HTML und CSS.
                         <br> Die Webseite ist für die Ansicht auf mobilen Geräten geeignet mit einem Breakpoint bei 768px. 
                     </div>
-                    <div class="stuff-button" id="recipe">
-                        HTML
-                    </div>
-                    <div class="stuff-button" id="recipe">
-                        CSS
+                    <div class="stuff-button-container">
+                        <div class="stuff-button" id="recipe">
+                            HTML
+                        </div>
+                        <div class="stuff-button" id="recipe">
+                            CSS
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="project">
                 <div class="responsive-box">
-                    <div class="project-slide" id="owlround">
-                        <img src="assets/img/owlround.png" alt="">
-                    </div>
+                    <a href="./assets/Präsentation_wip23_g1_Owlround.pdf" target="_blank">
+                        <div class="project-slide" id="owlround">
+                            <h1>Webanwendung <br> Owlround</h1>
+                        </div>
+                    </a>
                 </div>
                 <div class="project-text">
-                    <h2>Webanwendung: <br>Owlround</h2>
+                    <h3>Projektmanagement für Eulen</h3>
                     <div class="fliesstext"> Eine Webanwendung für agiles Arbeiten.
                         <br> Im Rahmen unserer Projektarbeit im Studium haben wir eine FullStack-Applikation konzpiert und entwickelt.
                         Die App ist ein Projektmanagementtool mit nützlichen Hilfsmitteln wie einem Kanbanboard, Burndownchart.
                         Hier war ich unter anderem zuständig für die Gestaltung der Nutzeroberflächen unter anderem mit Figma und die Front-End Entwicklung.
                     </div>
-                    <div class="stuff-button" id="owlround">
-                        HTML
-                    </div>
-                    <div class="stuff-button" id="owlround">
-                        CSS
-                    </div>
-                    <div class="stuff-button" id="owlround">
-                        JavaScript
-                    </div>
-                    <div class="stuff-button" id="owlround">
-                        SQL
+                    <div class="stuff-button-container">
+                        <div class="stuff-button" id="owlround">
+                            HTML
+                        </div>
+                        <div class="stuff-button" id="owlround">
+                            CSS
+                        </div>
+                        <div class="stuff-button" id="owlround">
+                            JavaScript
+                        </div>
+                        <div class="stuff-button" id="owlround">
+                            SQL
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="project">
                 <div class="responsive-box">
                     <div class="project-slide" id="weather">
-                        <img src="https://raw.githubusercontent.com/Ralph1612/weather_app/main/images/clear.png" alt="">
+                        <h1>Webanwendung <br>Wetter-App</h1>
                     </div>
                 </div>
                 <div class="project-text">
-                    <h2>Webanwendung: <br>Wetter-App</h2>
+                    <h3>Regnet es gerade in Oslo?</h3>
                     <div class="fliesstext"> Der Nutzer kann in der Suchmaske die gewünschte Stadt suchen und sich die aktuellen Wetterdaten ausgeben lassen.
                         <br> Die Daten werden über die API von openweathermap.org bezogen.
                     </div>
-                    <div class="stuff-button" id="weather">
-                        HTML
-                    </div>
-                    <div class="stuff-button" id="weather">
-                        CSS
-                    </div>
-                    <div class="stuff-button" id="weather">
-                        JavaScript
+                    <div class="stuff-button-container">
+                        <div class="stuff-button" id="weather">
+                            HTML
+                        </div>
+                        <div class="stuff-button" id="weather">
+                            CSS
+                        </div>
+                        <div class="stuff-button" id="weather">
+                            JavaScript
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
         <a href="https://github.com/Ralph1612">
             <div class="contact-button">
                 Github
             </div>
         </a>
+        <div class="loader" id="loader-end"></div>
+    </div>
+
 
 
     </div>
@@ -123,6 +136,15 @@
             var modeIcon = document.getElementById('modeIcon');
             modeIcon.textContent = body.classList.contains('dark-mode') ? 'light_mode' : 'dark_mode';
         }
+
+        window.addEventListener('load', function() {
+            var loader = document.querySelector('.loader');
+            setTimeout(function() {
+                loader.style.animation = 'paused';
+            }, 2000); 
+        });
+
+  
 
     </script>
     
