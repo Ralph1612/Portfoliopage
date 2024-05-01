@@ -36,7 +36,7 @@ window.addEventListener('scroll', function() {
                 nextPage = '/Portfoliopage/projekte.html';
                 break;
             case '/Portfoliopage/projekte.html':
-                nextPage = '/Portfoliopage/profil.html';
+                nextPage = '/Portfoliopage/Profil.html';
                 break;
             case '/Portfoliopage/profil.html':
                 nextPage = '/Portfoliopage/kontakt.html';
