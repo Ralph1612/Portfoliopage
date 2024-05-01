@@ -32,16 +32,16 @@ window.addEventListener('scroll', function() {
         var nextPage;
 
         switch(currentPage) {
-            case '/index.html':
+            case './index.html':
                 nextPage = './projekte.html';
                 break;
-            case '/projekte.html':
+            case './projekte.html':
                 nextPage = './profil.html';
                 break;
-            case '/profil.html':
+            case './profil.html':
                 nextPage = './kontakt.html';
                 break;
-            case '/kontakt.html':
+            case './kontakt.html':
                 nextPage = './index.html';
                 break;
             default:
