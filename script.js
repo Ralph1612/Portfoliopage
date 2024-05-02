@@ -32,7 +32,7 @@ window.addEventListener('scroll', function() {
         var nextPage;
 
         switch(currentPage) {
-            case '/index.html':
+            case '/Portfoliopage//index.html':
                 nextPage = '/Portfoliopage/projekte.html';
                 break;
             case '/Portfoliopage/projekte.html':
