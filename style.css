@@ -424,6 +424,7 @@ span.skill-sub{
 
 .projekt-grid{
     width: 100%;
+    max-width: 1200px;
 }
 
 .project{
@@ -443,14 +444,19 @@ span.skill-sub{
     animation: slideInFromTop 1s ease forwards; 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 830px) {
     .project {
         grid-template-columns: 1fr;
+    }
+
+    .project-slide h1{
+        font-size: smaller;
     }
 }
 
 .responsive-box {
     width: 100%;
+    min-width: 300px;
     position: relative;
     padding-bottom: 70%;
   }
