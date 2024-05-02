@@ -166,6 +166,27 @@ a:link, a:visited, a:hover, a:active {
     min-height: 95vh;
 }
 
+.more{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    padding: 20px;
+    margin-top: 45px;
+    border-radius: 15px;
+    width: 200px;
+    background-color: var(--box-color);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    border-radius: 25px;
+    transition: opacity 0.5s ease;
+}
+
+.more .material-symbols-outlined{
+    margin-top: 2rem;
+    font-size: xx-large;
+}
+
 @keyframes slideInFromTop {
     from {
         opacity: 0; 
@@ -215,9 +236,10 @@ a:link, a:visited, a:hover, a:active {
     cursor: pointer; 
 }
 
-.button:hover{
+.button:hover, .headerlinks h3:hover{
     color: dodgerblue;
     text-shadow: 2px 3px 5px 2px var(--shadow);
+    transition: ease-in-out 0.4s;
 }
 
 /*Kontakt*/
@@ -485,6 +507,12 @@ span.skill-sub{
     background-color: teal;
     border: none;
     color: rgb(187, 235, 232);
+}
+
+#mars{
+    background-color: #0A8754;
+    border: none;
+    color: #212529;
 }
 
 #recipe{
