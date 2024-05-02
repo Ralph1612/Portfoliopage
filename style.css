@@ -373,14 +373,15 @@ span.skill-sub{
 }
 
 .erfahrung-slider, .ausbildung-slider{
-    width: 90vw;
-    max-width: 800px;
+    width: 100%;
     height: max-content;
     display: flex;
+    flex-wrap: nowrap;
     flex-direction: row;
     overflow-y: hidden;
     scroll-behavior: smooth;
     overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
 }
 
 .erfahrung{
@@ -389,7 +390,7 @@ span.skill-sub{
 }
 .job {
     flex: 0 0 auto; 
-    width: 75vw;
+    width: calc(100% - 20px);
     max-width: 600px;
     min-width: 600px;
     padding: 20px;
