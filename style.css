@@ -338,10 +338,11 @@ a:link, a:visited, a:hover, a:active {
     margin-top: 3rem;
 }
 
-@media (min-width: 360px){
+@media (min-width: 767px){
     .grid-skill-text>* {
         flex: 1 0;
     }
+
 }
 
 .skill{
@@ -378,65 +379,62 @@ span.skill-sub{
     margin-block-end: 0.2rem;
 }
 
-.slider-container{
+.slider-container {
     overflow-x: auto;
     white-space: nowrap;
     display: flex;
     align-items: center;
     flex-direction: row;
     height: max-content;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch; 
+    -webkit-overflow-scrolling: touch;
     cursor: ew-resize;
 }
 
-.slider-container::-webkit-scrollbar {
-    display: none; 
+.erfahrung-slider::-webkit-scrollbar, 
+.ausbildung-slider::-webkit-scrollbar, .slider-container::-webkit-scrollbar {
+    display: none;
 }
 
-.erfahrung-slider, .ausbildung-slider{
-    width: 100%;
+.erfahrung-slider, .ausbildung-slider {
     height: max-content;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
     overflow-y: hidden;
     scroll-behavior: smooth;
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
 }
 
-.erfahrung{
+.erfahrung {
     width: 95vw;
     max-width: 800px;
 }
+
 .job {
-    flex: 0 0 auto; 
-    width: calc(100% - 20px);
-    max-width: 600px;
+    flex-grow: 1;
     min-width: 600px;
     padding: 20px;
     margin-right: 10px;
     border-radius: 25px;
+    background-color: var(--box-color);
+}
+
+@media (max-width: 767px) {
+    .job {
+        max-width: 100vw;
+        min-width: 75vw;
+        width: fit-content;
+    }
+}
+
+.job h4,
+.job h5,
+.job .fliesstext {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
     white-space: normal; 
-    background-color: var(--box-color)
 }
 
-.arrows{
-    position: absolute;
-    top: 0;
 
-}
-
-.left-arrow-erfahrung, .right-arrow-erfahrung, .left-arrow-ausbildung, .right-arrow-ausbildung{
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    cursor: pointer;
-    padding: 5px;
-    background-color: var(--button-color);
-    border-radius: 50%;
-}
 
 .erfahrung h2{
     margin-block-start: 4em;
